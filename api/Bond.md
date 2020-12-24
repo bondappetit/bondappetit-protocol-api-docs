@@ -1,29 +1,37 @@
-## `Bond`
+## Bond
 
 
 
 
 
 ### Events
-#### `DelegateChanged(address delegator, address fromDelegate, address toDelegate)`
+```solidity
+DelegateChanged(address delegator, address fromDelegate, address toDelegate)
+```
 
 An event thats emitted when an account changes its delegate
 
 
 
-#### `DelegateVotesChanged(address delegate, uint256 previousBalance, uint256 newBalance)`
+```solidity
+DelegateVotesChanged(address delegate, uint256 previousBalance, uint256 newBalance)
+```
 
 An event thats emitted when a delegate account's vote balance changes
 
 
 
-#### `Transfer(address from, address to, uint256 amount)`
+```solidity
+Transfer(address from, address to, uint256 amount)
+```
 
 The standard EIP-20 transfer event
 
 
 
-#### `Approval(address owner, address spender, uint256 amount)`
+```solidity
+Approval(address owner, address spender, uint256 amount)
+```
 
 The standard EIP-20 approval event
 
@@ -31,37 +39,67 @@ The standard EIP-20 approval event
 
 
 ### Variables
-#### `string name`
+```solidity
+string name
+```
 
-#### `string symbol`
+```solidity
+string symbol
+```
 
-#### `uint8 decimals`
+```solidity
+uint8 decimals
+```
 
-#### `uint256 totalSupply`
+```solidity
+uint256 totalSupply
+```
 
-#### `mapping(address => mapping(address => uint96)) allowances`
+```solidity
+mapping(address => mapping(address => uint96)) allowances
+```
 
-#### `mapping(address => uint96) balances`
+```solidity
+mapping(address => uint96) balances
+```
 
-#### `mapping(address => struct Bond.Lock) locking`
+```solidity
+mapping(address => struct Bond.Lock) locking
+```
 
-#### `struct EnumerableSet.AddressSet lockingAllowed`
+```solidity
+struct EnumerableSet.AddressSet lockingAllowed
+```
 
-#### `mapping(address => address) delegates`
+```solidity
+mapping(address => address) delegates
+```
 
-#### `mapping(address => mapping(uint32 => struct Bond.Checkpoint)) checkpoints`
+```solidity
+mapping(address => mapping(uint32 => struct Bond.Checkpoint)) checkpoints
+```
 
-#### `mapping(address => uint32) numCheckpoints`
+```solidity
+mapping(address => uint32) numCheckpoints
+```
 
-#### `bytes32 DOMAIN_TYPEHASH`
+```solidity
+bytes32 DOMAIN_TYPEHASH
+```
 
-#### `bytes32 DELEGATION_TYPEHASH`
+```solidity
+bytes32 DELEGATION_TYPEHASH
+```
 
-#### `mapping(address => uint256) nonces`
+```solidity
+mapping(address => uint256) nonces
+```
 
 
 ### Functions
-#### `constructor(address account)` (public)
+```solidity
+constructor(address account)
+```
 
 Construct a new Bond token
 
@@ -71,7 +109,9 @@ Construct a new Bond token
 **Arguments:**
 - *account* - The initial account to grant all the tokens
 
-#### `allowance(address account, address spender) → uint256` (external)
+```solidity
+allowance(address account, address spender) → uint256
+```
 
 Get the number of tokens `spender` is approved to spend on behalf of `account`
 
@@ -87,7 +127,9 @@ Get the number of tokens `spender` is approved to spend on behalf of `account`
 **Returns:**
 - *The* - number of tokens approved
 
-#### `approve(address spender, uint256 rawAmount) → bool` (external)
+```solidity
+approve(address spender, uint256 rawAmount) → bool
+```
 
 Approve `spender` to transfer up to `amount` from `src`
 
@@ -105,7 +147,9 @@ This will overwrite the approval amount for `spender`
 **Returns:**
 - *Whether* - or not the approval succeeded
 
-#### `balanceOf(address account) → uint256` (external)
+```solidity
+balanceOf(address account) → uint256
+```
 
 Get the number of tokens held by the `account`
 
@@ -119,7 +163,9 @@ Get the number of tokens held by the `account`
 **Returns:**
 - *The* - number of tokens held
 
-#### `transfer(address dst, uint256 rawAmount) → bool` (external)
+```solidity
+transfer(address dst, uint256 rawAmount) → bool
+```
 
 Transfer `amount` tokens from `msg.sender` to `dst`
 
@@ -135,7 +181,9 @@ Transfer `amount` tokens from `msg.sender` to `dst`
 **Returns:**
 - *Whether* - or not the transfer succeeded
 
-#### `transferFrom(address src, address dst, uint256 rawAmount) → bool` (external)
+```solidity
+transferFrom(address src, address dst, uint256 rawAmount) → bool
+```
 
 Transfer `amount` tokens from `src` to `dst`
 
@@ -153,7 +201,9 @@ Transfer `amount` tokens from `src` to `dst`
 **Returns:**
 - *Whether* - or not the transfer succeeded
 
-#### `allowTransferLock(address account) → bool` (external)
+```solidity
+allowTransferLock(address account) → bool
+```
 
 Add account to transfer lock method allowed list
 
@@ -163,7 +213,9 @@ Add account to transfer lock method allowed list
 **Arguments:**
 - *account* - Allowable account
 
-#### `denyTransferLock(address account) → bool` (external)
+```solidity
+denyTransferLock(address account) → bool
+```
 
 Remove account from transfer lock method allowed list
 
@@ -173,13 +225,17 @@ Remove account from transfer lock method allowed list
 **Arguments:**
 - *account* - Denied account
 
-#### `transferLock(address dst, uint256 rawAmount, uint256 date) → bool` (external)
+```solidity
+transferLock(address dst, uint256 rawAmount, uint256 date) → bool
+```
 
 
 
 
 
-#### `mint(address account, uint256 amount)` (public)
+```solidity
+mint(address account, uint256 amount)
+```
 
 Creates `amount` tokens and assigns them to `account`, increasing
 the total supply.
@@ -193,7 +249,9 @@ the total supply.
 
 - *amount* - Amount of token to be created.
 
-#### `burn(address account, uint256 amount)` (public)
+```solidity
+burn(address account, uint256 amount)
+```
 
 
 
@@ -204,7 +262,9 @@ the total supply.
 
 - *amount* - Amount of token to be removed.
 
-#### `delegate(address delegatee)` (public)
+```solidity
+delegate(address delegatee)
+```
 
 Delegate votes from `msg.sender` to `delegatee`
 
@@ -214,7 +274,9 @@ Delegate votes from `msg.sender` to `delegatee`
 **Arguments:**
 - *delegatee* - The address to delegate votes to
 
-#### `delegateBySig(address delegatee, uint256 nonce, uint256 expiry, uint8 v, bytes32 r, bytes32 s)` (public)
+```solidity
+delegateBySig(address delegatee, uint256 nonce, uint256 expiry, uint8 v, bytes32 r, bytes32 s)
+```
 
 Delegates votes from signatory to `delegatee`
 
@@ -234,7 +296,9 @@ Delegates votes from signatory to `delegatee`
 
 - *s* - Half of the ECDSA signature pair
 
-#### `getCurrentVotes(address account) → uint96` (external)
+```solidity
+getCurrentVotes(address account) → uint96
+```
 
 Gets the current votes balance for `account`
 
@@ -248,7 +312,9 @@ Gets the current votes balance for `account`
 **Returns:**
 - *The* - number of current votes for `account`
 
-#### `getPriorVotes(address account, uint256 blockNumber) → uint96` (public)
+```solidity
+getPriorVotes(address account, uint256 blockNumber) → uint96
+```
 
 Determine the prior number of votes for an account as of a block number
 

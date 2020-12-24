@@ -1,11 +1,13 @@
-## `IUniswapV2Factory`
+## IUniswapV2Factory
 
 
 
 
 
 ### Events
-#### `PairCreated(address token0, address token1, address pair, uint256)`
+```solidity
+PairCreated(address token0, address token1, address pair, uint256)
+```
 
 
 
@@ -15,49 +17,65 @@
 ### Variables
 
 ### Functions
-#### `feeTo() → address` (external)
+```solidity
+feeTo() → address
+```
 
 
 
 
 
-#### `feeToSetter() → address` (external)
+```solidity
+feeToSetter() → address
+```
 
 
 
 
 
-#### `getPair(address tokenA, address tokenB) → address pair` (external)
+```solidity
+getPair(address tokenA, address tokenB) → address pair
+```
 
 
 
 
 
-#### `allPairs(uint256) → address pair` (external)
+```solidity
+allPairs(uint256) → address pair
+```
 
 
 
 
 
-#### `allPairsLength() → uint256` (external)
+```solidity
+allPairsLength() → uint256
+```
 
 
 
 
 
-#### `createPair(address tokenA, address tokenB) → address pair` (external)
+```solidity
+createPair(address tokenA, address tokenB) → address pair
+```
 
 
 
 
 
-#### `setFeeTo(address)` (external)
+```solidity
+setFeeTo(address)
+```
 
 
 
 
 
-#### `setFeeToSetter(address)` (external)
+```solidity
+setFeeToSetter(address)
+```
 
 
 

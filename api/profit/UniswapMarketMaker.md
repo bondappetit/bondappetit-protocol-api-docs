@@ -1,35 +1,45 @@
-## `UniswapMarketMaker`
+## UniswapMarketMaker
 
 
 
 
 
 ### Events
-#### `Transfer(address token, address recipient, uint256 amount)`
+```solidity
+TokenTransfer(address token, address recipient, uint256 amount)
+```
 
 An event thats emitted when an token transferred to recipient.
 
 
 
-#### `UniswapRouterChanged(address newUniswapRouter)`
+```solidity
+UniswapRouterChanged(address newUniswapRouter)
+```
 
 An event thats emitted when an uniswap router contract address changed.
 
 
 
-#### `IncomingChanged(address newIncoming)`
+```solidity
+IncomingChanged(address newIncoming)
+```
 
 An event thats emitted when an incoming token changed.
 
 
 
-#### `LiquidityAdded(uint256 incoming, uint256 support)`
+```solidity
+LiquidityIncreased(uint256 incoming, uint256 support)
+```
 
 An event thats emitted when an liquidity added.
 
 
 
-#### `LiquidityRemoved(uint256 lp, uint256 incoming, uint256 support)`
+```solidity
+LiquidityReduced(uint256 lp, uint256 incoming, uint256 support)
+```
 
 An event thats emitted when an liquidity removed.
 
@@ -37,15 +47,23 @@ An event thats emitted when an liquidity removed.
 
 
 ### Variables
-#### `contract ERC20 incoming`
+```solidity
+contract ERC20 incoming
+```
 
-#### `contract ERC20 support`
+```solidity
+contract ERC20 support
+```
 
-#### `contract IUniswapV2Router02 uniswapRouter`
+```solidity
+contract IUniswapV2Router02 uniswapRouter
+```
 
 
 ### Functions
-#### `constructor(address _incoming, address _support, address _uniswapRouter)` (public)
+```solidity
+constructor(address _incoming, address _support, address _uniswapRouter)
+```
 
 
 
@@ -58,7 +76,9 @@ An event thats emitted when an liquidity removed.
 
 - *_uniswapRouter* - Address of Uniswap router contract.
 
-#### `transfer(address token, address recipient, uint256 amount)` (external)
+```solidity
+transfer(address token, address recipient, uint256 amount)
+```
 
 Transfer incoming token to recipient.
 
@@ -72,7 +92,9 @@ Transfer incoming token to recipient.
 
 - *amount* - Amount of transferred token.
 
-#### `changeUniswapRouter(address _uniswapRouter)` (external)
+```solidity
+changeUniswapRouter(address _uniswapRouter)
+```
 
 Changed uniswap router contract address.
 
@@ -82,7 +104,9 @@ Changed uniswap router contract address.
 **Arguments:**
 - *_uniswapRouter* - Address new uniswap router contract.
 
-#### `changeIncoming(address _incoming, address _recipient)` (external)
+```solidity
+changeIncoming(address _incoming, address _recipient)
+```
 
 Change incoming token address.
 
@@ -94,7 +118,9 @@ Change incoming token address.
 
 - *_recipient* - Address of recipient.
 
-#### `buyLiquidity(uint256 amount)` (external)
+```solidity
+buyLiquidity(uint256 amount)
+```
 
 Buy support token and add liquidity.
 
@@ -104,7 +130,9 @@ Buy support token and add liquidity.
 **Arguments:**
 - *amount* - Amount of incoming token.
 
-#### `addLiquidity(uint256 incomingAmount, uint256 supportAmount)` (external)
+```solidity
+addLiquidity(uint256 incomingAmount, uint256 supportAmount)
+```
 
 Add liquidity.
 
@@ -116,7 +144,9 @@ Add liquidity.
 
 - *supportAmount* - Amount of support token.
 
-#### `liquidityPair() → address` (public)
+```solidity
+liquidityPair() → address
+```
 
 Return liquidity pair address.
 
@@ -126,7 +156,9 @@ Return liquidity pair address.
 **Returns:**
 - *Liquidity* - pair address.
 
-#### `removeLiquidity(uint256 amount)` (external)
+```solidity
+removeLiquidity(uint256 amount)
+```
 
 Remove liquidity.
 

@@ -1,4 +1,4 @@
-## `IDepositaryBalanceView`
+## IDepositaryBalanceView
 
 
 
@@ -9,7 +9,9 @@
 ### Variables
 
 ### Functions
-#### `decimals() → uint256` (external)
+```solidity
+decimals() → uint256
+```
 
 Get decimals balance.
 
@@ -19,7 +21,9 @@ Get decimals balance.
 **Returns:**
 - *Decimals* - balance.
 
-#### `balance() → uint256` (external)
+```solidity
+balance() → uint256
+```
 
 Get balance of depositary.
 

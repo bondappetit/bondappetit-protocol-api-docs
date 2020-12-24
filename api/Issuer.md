@@ -1,17 +1,21 @@
-## `Issuer`
+## Issuer
 
 
 
 
 
 ### Events
-#### `TransferTreasury(address newTreasury)`
+```solidity
+TransferTreasury(address newTreasury)
+```
 
 An event thats emitted when an Treasury contract transfered.
 
 
 
-#### `Rebalance()`
+```solidity
+Rebalance()
+```
 
 An event thats emitted when an ABT total supply rebalanced.
 
@@ -19,13 +23,19 @@ An event thats emitted when an ABT total supply rebalanced.
 
 
 ### Variables
-#### `contract ABT abt`
+```solidity
+contract ABT abt
+```
 
-#### `address treasury`
+```solidity
+address treasury
+```
 
 
 ### Functions
-#### `constructor(address _abt, address _treasury)` (public)
+```solidity
+constructor(address _abt, address _treasury)
+```
 
 
 
@@ -36,7 +46,9 @@ An event thats emitted when an ABT total supply rebalanced.
 
 - *_treasury* - Treasury contract address.
 
-#### `changeTreasury(address _treasury)` (external)
+```solidity
+changeTreasury(address _treasury)
+```
 
 Transfer Treasury contract to new address.
 
@@ -46,7 +58,9 @@ Transfer Treasury contract to new address.
 **Arguments:**
 - *_treasury* - New address Treasury contract.
 
-#### `rebalance()` (external)
+```solidity
+rebalance()
+```
 
 Rebalance ABT total supply by depositary balance. Mint ABT tokens if depositary balance greater token total supply and burn otherwise.
 

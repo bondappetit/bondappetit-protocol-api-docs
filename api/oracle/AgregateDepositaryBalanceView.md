@@ -1,17 +1,21 @@
-## `AgregateDepositaryBalanceView`
+## AgregateDepositaryBalanceView
 
 
 
 
 
 ### Events
-#### `DepositaryAdded(address depositary)`
+```solidity
+DepositaryAdded(address depositary)
+```
 
 An event thats emitted when an new depositary added to agregate.
 
 
 
-#### `DepositaryRemoved(address depositary)`
+```solidity
+DepositaryRemoved(address depositary)
+```
 
 An event thats emitted when an depositary removed from agregate.
 
@@ -19,17 +23,27 @@ An event thats emitted when an depositary removed from agregate.
 
 
 ### Variables
-#### `uint256 maxSize`
+```solidity
+uint256 maxSize
+```
 
-#### `uint256 decimals`
+```solidity
+uint256 decimals
+```
 
-#### `contract IDepositaryBalanceView[] depositaries`
+```solidity
+contract IDepositaryBalanceView[] depositaries
+```
 
-#### `mapping(address => uint256) depositariesIndex`
+```solidity
+mapping(address => uint256) depositariesIndex
+```
 
 
 ### Functions
-#### `constructor(uint256 _decimals, uint256 _maxSize)` (public)
+```solidity
+constructor(uint256 _decimals, uint256 _maxSize)
+```
 
 
 
@@ -40,7 +54,9 @@ An event thats emitted when an depositary removed from agregate.
 
 - *_maxSize* - Max number depositaries in agregate.
 
-#### `size() → uint256` (public)
+```solidity
+size() → uint256
+```
 
 
 
@@ -49,7 +65,9 @@ An event thats emitted when an depositary removed from agregate.
 **Returns:**
 - *Depositaries* - count of agregate.
 
-#### `addDepositary(address depositary)` (external)
+```solidity
+addDepositary(address depositary)
+```
 
 Add depositary address to agregate.
 
@@ -59,7 +77,9 @@ Add depositary address to agregate.
 **Arguments:**
 - *depositary* - Added depositary address.
 
-#### `removeDepositary(address depositary)` (external)
+```solidity
+removeDepositary(address depositary)
+```
 
 Removed depositary address from agregate.
 
@@ -69,7 +89,9 @@ Removed depositary address from agregate.
 **Arguments:**
 - *depositary* - Removed depositary address.
 
-#### `balance() → uint256` (external)
+```solidity
+balance() → uint256
+```
 
 
 

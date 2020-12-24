@@ -1,4 +1,4 @@
-## `BondDepositaryBalanceView`
+## BondDepositaryBalanceView
 
 
 
@@ -7,15 +7,23 @@
 ### Events
 
 ### Variables
-#### `contract IDepositaryOracle depositary`
+```solidity
+contract IDepositaryOracle depositary
+```
 
-#### `contract ISecurityOracle securityOracle`
+```solidity
+contract ISecurityOracle securityOracle
+```
 
-#### `uint256 decimals`
+```solidity
+uint256 decimals
+```
 
 
 ### Functions
-#### `constructor(address _depositary, address _securityOracle)` (public)
+```solidity
+constructor(address _depositary, address _securityOracle)
+```
 
 
 
@@ -26,7 +34,9 @@
 
 - *_securityOracle* - Security oracle addresses.
 
-#### `balance() → uint256` (external)
+```solidity
+balance() → uint256
+```
 
 
 

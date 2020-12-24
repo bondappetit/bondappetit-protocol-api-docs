@@ -1,4 +1,4 @@
-## `BondInterface`
+## BondInterface
 
 
 
@@ -9,7 +9,9 @@
 ### Variables
 
 ### Functions
-#### `getPriorVotes(address account, uint256 blockNumber) → uint96` (external)
+```solidity
+getPriorVotes(address account, uint256 blockNumber) → uint96
+```
 
 
 

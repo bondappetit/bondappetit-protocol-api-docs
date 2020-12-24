@@ -1,53 +1,69 @@
-## `Market`
+## Market
 
 
 
 
 
 ### Events
-#### `PriceOracleChanged(address newPriceOracle)`
+```solidity
+PriceOracleChanged(address newPriceOracle)
+```
 
 An event thats emitted when an price oracle contract address changed.
 
 
 
-#### `UniswapRouterChanged(address newUniswapRouter)`
+```solidity
+UniswapRouterChanged(address newUniswapRouter)
+```
 
 An event thats emitted when an uniswap router contract address changed.
 
 
 
-#### `CumulativeChanged(address newToken)`
+```solidity
+CumulativeChanged(address newToken)
+```
 
 An event thats emitted when an cumulative token changed.
 
 
 
-#### `TokenAllowed(address token, string symbol)`
+```solidity
+TokenAllowed(address token, string symbol)
+```
 
 An event thats emitted when an token allowed.
 
 
 
-#### `TokenDenied(address token)`
+```solidity
+TokenDenied(address token)
+```
 
 An event thats emitted when an token denied.
 
 
 
-#### `BondPriceChanged(uint256 newPrice)`
+```solidity
+BondPriceChanged(uint256 newPrice)
+```
 
 An event thats emitted when an bond token price changed.
 
 
 
-#### `Buy(address customer, address product, address token, uint256 amount, uint256 buy)`
+```solidity
+Buy(address customer, address product, address token, uint256 amount, uint256 buy)
+```
 
 An event thats emitted when an account buyed token.
 
 
 
-#### `Withdrawal(address recipient, address token, uint256 amount)`
+```solidity
+Withdrawal(address recipient, address token, uint256 amount)
+```
 
 An event thats emitted when an cumulative token withdrawal.
 
@@ -55,25 +71,43 @@ An event thats emitted when an cumulative token withdrawal.
 
 
 ### Variables
-#### `uint256 PRICE_DECIMALS`
+```solidity
+uint256 PRICE_DECIMALS
+```
 
-#### `contract ERC20 cumulative`
+```solidity
+contract ERC20 cumulative
+```
 
-#### `contract ABT abt`
+```solidity
+contract ABT abt
+```
 
-#### `contract Bond bond`
+```solidity
+contract Bond bond
+```
 
-#### `uint256 bondPrice`
+```solidity
+uint256 bondPrice
+```
 
-#### `contract IUniswapV2Router02 uniswapRouter`
+```solidity
+contract IUniswapV2Router02 uniswapRouter
+```
 
-#### `contract IUniswapAnchoredView priceOracle`
+```solidity
+contract IUniswapAnchoredView priceOracle
+```
 
-#### `mapping(address => string) allowedTokens`
+```solidity
+mapping(address => string) allowedTokens
+```
 
 
 ### Functions
-#### `constructor(address _cumulative, address _abt, address _bond, address _uniswapRouter, address _priceOracle)` (public)
+```solidity
+constructor(address _cumulative, address _abt, address _bond, address _uniswapRouter, address _priceOracle)
+```
 
 
 
@@ -90,7 +124,9 @@ An event thats emitted when an cumulative token withdrawal.
 
 - *_priceOracle* - Address of Price oracle contract.
 
-#### `changeUniswapRouter(address _uniswapRouter)` (external)
+```solidity
+changeUniswapRouter(address _uniswapRouter)
+```
 
 Changed uniswap router contract address.
 
@@ -100,7 +136,9 @@ Changed uniswap router contract address.
 **Arguments:**
 - *_uniswapRouter* - Address new uniswap router contract.
 
-#### `changePriceOracle(address _priceOracle)` (external)
+```solidity
+changePriceOracle(address _priceOracle)
+```
 
 Changed price oracle contract address.
 
@@ -110,7 +148,9 @@ Changed price oracle contract address.
 **Arguments:**
 - *_priceOracle* - Address new price oracle contract.
 
-#### `changeCumulativeToken(address newToken, address recipient)` (external)
+```solidity
+changeCumulativeToken(address newToken, address recipient)
+```
 
 Changed cumulative token address.
 
@@ -122,7 +162,9 @@ Changed cumulative token address.
 
 - *recipient* - Address of recipient for withdraw current cumulative balance.
 
-#### `allowToken(address token, string symbol)` (external)
+```solidity
+allowToken(address token, string symbol)
+```
 
 Add token to tokens white list.
 
@@ -132,7 +174,9 @@ Add token to tokens white list.
 **Arguments:**
 - *token* - Allowable token.
 
-#### `denyToken(address token)` (external)
+```solidity
+denyToken(address token)
+```
 
 Remove token from tokens white list.
 
@@ -142,7 +186,9 @@ Remove token from tokens white list.
 **Arguments:**
 - *token* - Denied token.
 
-#### `isAllowedToken(address token) → bool` (public)
+```solidity
+isAllowedToken(address token) → bool
+```
 
 
 
@@ -155,7 +201,9 @@ Remove token from tokens white list.
 **Returns:**
 - *Is* - target token allowed.
 
-#### `changeBondPrice(uint256 newPrice)` (external)
+```solidity
+changeBondPrice(uint256 newPrice)
+```
 
 Update Bond token price
 
@@ -165,7 +213,9 @@ Update Bond token price
 **Arguments:**
 - *newPrice* - New price of Bond token of USD (6 decimal)
 
-#### `transferABT(address recipient, uint256 amount)` (external)
+```solidity
+transferABT(address recipient, uint256 amount)
+```
 
 Transfer ABT token to recipient.
 
@@ -177,7 +227,9 @@ Transfer ABT token to recipient.
 
 - *amount* - Amount of transfered token.
 
-#### `transferBond(address recipient, uint256 amount)` (external)
+```solidity
+transferBond(address recipient, uint256 amount)
+```
 
 Transfer Bond token to recipient.
 
@@ -189,7 +241,9 @@ Transfer Bond token to recipient.
 
 - *amount* - Amount of transfered token.
 
-#### `priceABT(address token, uint256 amount) → uint256` (external)
+```solidity
+priceABT(address token, uint256 amount) → uint256
+```
 
 
 
@@ -205,7 +259,9 @@ Get ABT token price from payment token amount.
 **Returns:**
 - *Price* - of product token.
 
-#### `priceBond(address token, uint256 amount) → uint256` (external)
+```solidity
+priceBond(address token, uint256 amount) → uint256
+```
 
 
 
@@ -221,7 +277,9 @@ Get Bond token price from payment token amount.
 **Returns:**
 - *Price* - of product token.
 
-#### `buyABT(address token, uint256 amount) → bool` (external)
+```solidity
+buyABT(address token, uint256 amount) → bool
+```
 
 Buy ABT token with ERC20 payment token amount.
 
@@ -237,7 +295,9 @@ Buy ABT token with ERC20 payment token amount.
 **Returns:**
 - *True* - if success.
 
-#### `buyBond(address token, uint256 amount) → bool` (external)
+```solidity
+buyBond(address token, uint256 amount) → bool
+```
 
 Buy Bond token with ERC20 payment token amount.
 
@@ -253,7 +313,9 @@ Buy Bond token with ERC20 payment token amount.
 **Returns:**
 - *True* - if success.
 
-#### `buyABTFromETH() → bool` (external)
+```solidity
+buyABTFromETH() → bool
+```
 
 Buy ABT token with ETH amount.
 
@@ -263,7 +325,9 @@ Buy ABT token with ETH amount.
 **Returns:**
 - *True* - if success.
 
-#### `buyBondFromETH() → bool` (external)
+```solidity
+buyBondFromETH() → bool
+```
 
 Buy Bond token with ETH amount.
 
@@ -273,7 +337,9 @@ Buy Bond token with ETH amount.
 **Returns:**
 - *True* - if success.
 
-#### `withdraw(address recipient)` (public)
+```solidity
+withdraw(address recipient)
+```
 
 Withdraw cumulative token to address.
 

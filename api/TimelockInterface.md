@@ -1,4 +1,4 @@
-## `TimelockInterface`
+## TimelockInterface
 
 
 
@@ -9,43 +9,57 @@
 ### Variables
 
 ### Functions
-#### `delay() → uint256` (external)
+```solidity
+delay() → uint256
+```
 
 
 
 
 
-#### `GRACE_PERIOD() → uint256` (external)
+```solidity
+GRACE_PERIOD() → uint256
+```
 
 
 
 
 
-#### `acceptAdmin()` (external)
+```solidity
+acceptAdmin()
+```
 
 
 
 
 
-#### `queuedTransactions(bytes32 hash) → bool` (external)
+```solidity
+queuedTransactions(bytes32 hash) → bool
+```
 
 
 
 
 
-#### `queueTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes32` (external)
+```solidity
+queueTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes32
+```
 
 
 
 
 
-#### `cancelTransaction(address target, uint256 value, string signature, bytes data, uint256 eta)` (external)
+```solidity
+cancelTransaction(address target, uint256 value, string signature, bytes data, uint256 eta)
+```
 
 
 
 
 
-#### `executeTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes` (external)
+```solidity
+executeTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes
+```
 
 
 

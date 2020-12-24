@@ -1,23 +1,29 @@
-## `Vesting`
+## Vesting
 
 
 
 
 
 ### Events
-#### `Locked(uint256 periodId)`
+```solidity
+Locked(uint256 periodId)
+```
 
 An event emitted when locking a period.
 
 
 
-#### `Revoked(uint256 periodId)`
+```solidity
+Revoked(uint256 periodId)
+```
 
 An event emitted when revoked a period.
 
 
 
-#### `Withdrawal(address recipient, uint256 periodId)`
+```solidity
+Withdrawal(address recipient, uint256 periodId)
+```
 
 An event emitted when withdrawal a period.
 
@@ -25,25 +31,39 @@ An event emitted when withdrawal a period.
 
 
 ### Variables
-#### `contract Bond bond`
+```solidity
+contract Bond bond
+```
 
-#### `uint256 currentPeriod`
+```solidity
+uint256 currentPeriod
+```
 
-#### `struct EnumerableSet.AddressSet participants`
+```solidity
+struct EnumerableSet.AddressSet participants
+```
 
-#### `mapping(address => mapping(uint256 => struct Vesting.Period)) periods`
+```solidity
+mapping(address => mapping(uint256 => struct Vesting.Period)) periods
+```
 
-#### `mapping(address => uint256[]) periodsIndex`
+```solidity
+mapping(address => uint256[]) periodsIndex
+```
 
 
 ### Functions
-#### `maxPeriodsPerRecipient() → uint256` (public)
+```solidity
+maxPeriodsPerRecipient() → uint256
+```
 
 The number of periods for a per recipient.
 
 
 
-#### `constructor(address _bond)` (public)
+```solidity
+constructor(address _bond)
+```
 
 
 
@@ -52,7 +72,9 @@ The number of periods for a per recipient.
 **Arguments:**
 - *_bond* - Address of Bond token contract.
 
-#### `lock(address recipient, uint256 amount, uint256 date) → uint256` (external)
+```solidity
+lock(address recipient, uint256 amount, uint256 date) → uint256
+```
 
 Add new period.
 
@@ -70,7 +92,9 @@ Add new period.
 **Returns:**
 - *Added* - period identifier.
 
-#### `revoke(address recipient, uint256 periodId)` (external)
+```solidity
+revoke(address recipient, uint256 periodId)
+```
 
 Revoke period.
 
@@ -82,7 +106,9 @@ Revoke period.
 
 - *periodId* - Period identifier.
 
-#### `getParticipants() → address[]` (external)
+```solidity
+getParticipants() → address[]
+```
 
 Return all participants addresses.
 
@@ -92,7 +118,9 @@ Return all participants addresses.
 **Returns:**
 - *Participants* - addresses.
 
-#### `info(address recipient) → struct Vesting.Period[]` (external)
+```solidity
+info(address recipient) → struct Vesting.Period[]
+```
 
 Get information of period.
 
@@ -106,7 +134,9 @@ Get information of period.
 **Returns:**
 - *Recipient* - periods list.
 
-#### `withdraw(uint256 periodId)` (external)
+```solidity
+withdraw(uint256 periodId)
+```
 
 Withdraw reward.
 

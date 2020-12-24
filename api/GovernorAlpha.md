@@ -1,35 +1,45 @@
-## `GovernorAlpha`
+## GovernorAlpha
 
 
 
 
 
 ### Events
-#### `ProposalCreated(uint256 id, address proposer, address[] targets, uint256[] values, string[] signatures, bytes[] calldatas, uint256 startBlock, uint256 endBlock, string description)`
+```solidity
+ProposalCreated(uint256 id, address proposer, address[] targets, uint256[] values, string[] signatures, bytes[] calldatas, uint256 startBlock, uint256 endBlock, string description)
+```
 
 An event emitted when a new proposal is created
 
 
 
-#### `VoteCast(address voter, uint256 proposalId, bool support, uint256 votes)`
+```solidity
+VoteCast(address voter, uint256 proposalId, bool support, uint256 votes)
+```
 
 An event emitted when a vote has been cast on a proposal
 
 
 
-#### `ProposalCanceled(uint256 id)`
+```solidity
+ProposalCanceled(uint256 id)
+```
 
 An event emitted when a proposal has been canceled
 
 
 
-#### `ProposalQueued(uint256 id, uint256 eta)`
+```solidity
+ProposalQueued(uint256 id, uint256 eta)
+```
 
 An event emitted when a proposal has been queued in the Timelock
 
 
 
-#### `ProposalExecuted(uint256 id)`
+```solidity
+ProposalExecuted(uint256 id)
+```
 
 An event emitted when a proposal has been executed in the Timelock
 
@@ -37,135 +47,191 @@ An event emitted when a proposal has been executed in the Timelock
 
 
 ### Variables
-#### `string name`
+```solidity
+string name
+```
 
-#### `contract TimelockInterface timelock`
+```solidity
+contract TimelockInterface timelock
+```
 
-#### `contract BondInterface bond`
+```solidity
+contract BondInterface bond
+```
 
-#### `address guardian`
+```solidity
+address guardian
+```
 
-#### `uint256 proposalCount`
+```solidity
+uint256 proposalCount
+```
 
-#### `mapping(uint256 => struct GovernorAlpha.Proposal) proposals`
+```solidity
+mapping(uint256 => struct GovernorAlpha.Proposal) proposals
+```
 
-#### `mapping(address => uint256) latestProposalIds`
+```solidity
+mapping(address => uint256) latestProposalIds
+```
 
-#### `bytes32 DOMAIN_TYPEHASH`
+```solidity
+bytes32 DOMAIN_TYPEHASH
+```
 
-#### `bytes32 BALLOT_TYPEHASH`
+```solidity
+bytes32 BALLOT_TYPEHASH
+```
 
 
 ### Functions
-#### `quorumVotes() → uint256` (public)
+```solidity
+quorumVotes() → uint256
+```
 
 The number of votes in support of a proposal required in order for a quorum to be reached and for a vote to succeed
 
 
 
-#### `proposalThreshold() → uint256` (public)
+```solidity
+proposalThreshold() → uint256
+```
 
 The number of votes required in order for a voter to become a proposer
 
 
 
-#### `proposalMaxOperations() → uint256` (public)
+```solidity
+proposalMaxOperations() → uint256
+```
 
 The maximum number of actions that can be included in a proposal
 
 
 
-#### `votingDelay() → uint256` (public)
+```solidity
+votingDelay() → uint256
+```
 
 The delay before voting on a proposal may take place, once proposed
 
 
 
-#### `votingPeriod() → uint256` (public)
+```solidity
+votingPeriod() → uint256
+```
 
 The duration of voting on a proposal, in blocks
 
 
 
-#### `constructor(address timelock_, address bond_, address guardian_)` (public)
+```solidity
+constructor(address timelock_, address bond_, address guardian_)
+```
 
 
 
 
 
-#### `propose(address[] targets, uint256[] values, string[] signatures, bytes[] calldatas, string description) → uint256` (public)
+```solidity
+propose(address[] targets, uint256[] values, string[] signatures, bytes[] calldatas, string description) → uint256
+```
 
 
 
 
 
-#### `queue(uint256 proposalId)` (public)
+```solidity
+queue(uint256 proposalId)
+```
 
 
 
 
 
-#### `execute(uint256 proposalId)` (public)
+```solidity
+execute(uint256 proposalId)
+```
 
 
 
 
 
-#### `cancel(uint256 proposalId)` (public)
+```solidity
+cancel(uint256 proposalId)
+```
 
 
 
 
 
-#### `getActions(uint256 proposalId) → address[] targets, uint256[] values, string[] signatures, bytes[] calldatas` (public)
+```solidity
+getActions(uint256 proposalId) → address[] targets, uint256[] values, string[] signatures, bytes[] calldatas
+```
 
 
 
 
 
-#### `getReceipt(uint256 proposalId, address voter) → struct GovernorAlpha.Receipt` (public)
+```solidity
+getReceipt(uint256 proposalId, address voter) → struct GovernorAlpha.Receipt
+```
 
 
 
 
 
-#### `state(uint256 proposalId) → enum GovernorAlpha.ProposalState` (public)
+```solidity
+state(uint256 proposalId) → enum GovernorAlpha.ProposalState
+```
 
 
 
 
 
-#### `castVote(uint256 proposalId, bool support)` (public)
+```solidity
+castVote(uint256 proposalId, bool support)
+```
 
 
 
 
 
-#### `castVoteBySig(uint256 proposalId, bool support, uint8 v, bytes32 r, bytes32 s)` (public)
+```solidity
+castVoteBySig(uint256 proposalId, bool support, uint8 v, bytes32 r, bytes32 s)
+```
 
 
 
 
 
-#### `__acceptAdmin()` (public)
+```solidity
+__acceptAdmin()
+```
 
 
 
 
 
-#### `__abdicate()` (public)
+```solidity
+__abdicate()
+```
 
 
 
 
 
-#### `__queueSetTimelockPendingAdmin(address newPendingAdmin, uint256 eta)` (public)
+```solidity
+__queueSetTimelockPendingAdmin(address newPendingAdmin, uint256 eta)
+```
 
 
 
 
 
-#### `__executeSetTimelockPendingAdmin(address newPendingAdmin, uint256 eta)` (public)
+```solidity
+__executeSetTimelockPendingAdmin(address newPendingAdmin, uint256 eta)
+```
 
 
 

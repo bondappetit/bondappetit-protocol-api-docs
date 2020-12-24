@@ -1,11 +1,13 @@
-## `ISecurityOracle`
+## ISecurityOracle
 
 
 
 
 
 ### Events
-#### `Update(string isin, string prop, bytes value)`
+```solidity
+Update(string isin, string prop, bytes value)
+```
 
 
 
@@ -15,7 +17,9 @@ Emitted when the security property update.
 ### Variables
 
 ### Functions
-#### `put(string isin, string prop, bytes value)` (external)
+```solidity
+put(string isin, string prop, bytes value)
+```
 
 Put property value of security.
 
@@ -29,7 +33,9 @@ Put property value of security.
 
 - *value* - Property value.
 
-#### `get(string isin, string prop) → bytes` (external)
+```solidity
+get(string isin, string prop) → bytes
+```
 
 Get property value of security.
 

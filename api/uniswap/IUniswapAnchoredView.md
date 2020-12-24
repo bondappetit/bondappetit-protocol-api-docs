@@ -1,4 +1,4 @@
-## `IUniswapAnchoredView`
+## IUniswapAnchoredView
 
 
 
@@ -9,7 +9,9 @@
 ### Variables
 
 ### Functions
-#### `price(string symbol) → uint256` (external)
+```solidity
+price(string symbol) → uint256
+```
 
 
 

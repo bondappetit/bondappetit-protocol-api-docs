@@ -1,41 +1,53 @@
-## `Timelock`
+## Timelock
 
 
 
 
 
 ### Events
-#### `NewAdmin(address newAdmin)`
+```solidity
+NewAdmin(address newAdmin)
+```
 
 
 
 
 
-#### `NewPendingAdmin(address newPendingAdmin)`
+```solidity
+NewPendingAdmin(address newPendingAdmin)
+```
 
 
 
 
 
-#### `NewDelay(uint256 newDelay)`
+```solidity
+NewDelay(uint256 newDelay)
+```
 
 
 
 
 
-#### `CancelTransaction(bytes32 txHash, address target, uint256 value, string signature, bytes data, uint256 eta)`
+```solidity
+CancelTransaction(bytes32 txHash, address target, uint256 value, string signature, bytes data, uint256 eta)
+```
 
 
 
 
 
-#### `ExecuteTransaction(bytes32 txHash, address target, uint256 value, string signature, bytes data, uint256 eta)`
+```solidity
+ExecuteTransaction(bytes32 txHash, address target, uint256 value, string signature, bytes data, uint256 eta)
+```
 
 
 
 
 
-#### `QueueTransaction(bytes32 txHash, address target, uint256 value, string signature, bytes data, uint256 eta)`
+```solidity
+QueueTransaction(bytes32 txHash, address target, uint256 value, string signature, bytes data, uint256 eta)
+```
 
 
 
@@ -43,71 +55,103 @@
 
 
 ### Variables
-#### `uint256 GRACE_PERIOD`
+```solidity
+uint256 GRACE_PERIOD
+```
 
-#### `uint256 MINIMUM_DELAY`
+```solidity
+uint256 MINIMUM_DELAY
+```
 
-#### `uint256 MAXIMUM_DELAY`
+```solidity
+uint256 MAXIMUM_DELAY
+```
 
-#### `address admin`
+```solidity
+address admin
+```
 
-#### `address pendingAdmin`
+```solidity
+address pendingAdmin
+```
 
-#### `uint256 delay`
+```solidity
+uint256 delay
+```
 
-#### `mapping(bytes32 => bool) queuedTransactions`
+```solidity
+mapping(bytes32 => bool) queuedTransactions
+```
 
 
 ### Functions
-#### `constructor(address admin_, uint256 delay_)` (public)
+```solidity
+constructor(address admin_, uint256 delay_)
+```
 
 
 
 
 
-#### `receive()` (external)
+```solidity
+receive()
+```
 
 
 
 
 
-#### `setDelay(uint256 delay_)` (public)
+```solidity
+setDelay(uint256 delay_)
+```
 
 
 
 
 
-#### `acceptAdmin()` (public)
+```solidity
+acceptAdmin()
+```
 
 
 
 
 
-#### `setPendingAdmin(address pendingAdmin_)` (public)
+```solidity
+setPendingAdmin(address pendingAdmin_)
+```
 
 
 
 
 
-#### `__transferAdmin(address _newAdmin)` (public)
+```solidity
+__transferAdmin(address _newAdmin)
+```
 
 
 
 
 
-#### `queueTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes32` (public)
+```solidity
+queueTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes32
+```
 
 
 
 
 
-#### `cancelTransaction(address target, uint256 value, string signature, bytes data, uint256 eta)` (public)
+```solidity
+cancelTransaction(address target, uint256 value, string signature, bytes data, uint256 eta)
+```
 
 
 
 
 
-#### `executeTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes` (public)
+```solidity
+executeTransaction(address target, uint256 value, string signature, bytes data, uint256 eta) → bytes
+```
 
 
 

@@ -1,4 +1,4 @@
-## `DepositaryOracle`
+## DepositaryOracle
 
 
 
@@ -9,25 +9,33 @@
 ### Variables
 
 ### Functions
-#### `maxSize() → uint256` (public)
+```solidity
+maxSize() → uint256
+```
 
 The maximum number of security in this depositary.
 
 
 
-#### `put(string isin, uint256 amount)` (external)
+```solidity
+put(string isin, uint256 amount)
+```
 
 
 
 
 
-#### `get(string isin) → struct IDepositaryOracle.Security` (external)
+```solidity
+get(string isin) → struct IDepositaryOracle.Security
+```
 
 
 
 
 
-#### `all() → struct IDepositaryOracle.Security[]` (external)
+```solidity
+all() → struct IDepositaryOracle.Security[]
+```
 
 
 

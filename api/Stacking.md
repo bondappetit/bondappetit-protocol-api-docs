@@ -1,23 +1,29 @@
-## `Stacking`
+## Stacking
 
 
 
 
 
 ### Events
-#### `RewardChanged(address token, uint256 from, uint256 to)`
+```solidity
+RewardChanged(address token, uint256 from, uint256 to)
+```
 
 An event thats emitted when an token reward changed.
 
 
 
-#### `Locked(address account, address token, uint256 amount)`
+```solidity
+Locked(address account, address token, uint256 amount)
+```
 
 An event thats emitted when a token is locked by an account.
 
 
 
-#### `Unlocked(address account, address token)`
+```solidity
+Unlocked(address account, address token)
+```
 
 An event thats emitted when a token is unlocked by an account.
 
@@ -25,15 +31,23 @@ An event thats emitted when a token is unlocked by an account.
 
 
 ### Variables
-#### `contract ERC20 rewardToken`
+```solidity
+contract ERC20 rewardToken
+```
 
-#### `mapping(address => struct Stacking.Reward) rewards`
+```solidity
+mapping(address => struct Stacking.Reward) rewards
+```
 
-#### `mapping(address => mapping(address => struct Stacking.Balance)) balances`
+```solidity
+mapping(address => mapping(address => struct Stacking.Balance)) balances
+```
 
 
 ### Functions
-#### `constructor(address _rewardToken)` (public)
+```solidity
+constructor(address _rewardToken)
+```
 
 
 
@@ -42,7 +56,9 @@ An event thats emitted when a token is unlocked by an account.
 **Arguments:**
 - *_rewardToken* - Address of reward token contract.
 
-#### `changeReward(address token, uint256 newDelta)` (external)
+```solidity
+changeReward(address token, uint256 newDelta)
+```
 
 Change reward token delta.
 
@@ -54,7 +70,9 @@ Change reward token delta.
 
 - *newDelta* - New reward delta.
 
-#### `price(address token) → uint256` (public)
+```solidity
+price(address token) → uint256
+```
 
 Get current price of token.
 
@@ -68,7 +86,9 @@ Get current price of token.
 **Returns:**
 - *Price* - of token.
 
-#### `reward(address token) → uint256` (public)
+```solidity
+reward(address token) → uint256
+```
 
 Get current reward of token for sender.
 
@@ -82,7 +102,9 @@ Get current reward of token for sender.
 **Returns:**
 - *Reward* - of token for sender.
 
-#### `lock(address token, uint256 amount)` (external)
+```solidity
+lock(address token, uint256 amount)
+```
 
 Stacking token.
 
@@ -94,7 +116,9 @@ Stacking token.
 
 - *amount* - Amount of stacking token.
 
-#### `unlock(address token)` (external)
+```solidity
+unlock(address token)
+```
 
 Unstacking token.
 

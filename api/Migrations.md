@@ -1,4 +1,4 @@
-## `Migrations`
+## Migrations
 
 
 
@@ -7,13 +7,19 @@
 ### Events
 
 ### Variables
-#### `address owner`
+```solidity
+address owner
+```
 
-#### `uint256 last_completed_migration`
+```solidity
+uint256 last_completed_migration
+```
 
 
 ### Functions
-#### `setCompleted(uint256 completed)` (public)
+```solidity
+setCompleted(uint256 completed)
+```
 
 
 

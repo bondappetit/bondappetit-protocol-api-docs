@@ -1,4 +1,4 @@
-## `ABT`
+## ABT
 
 
 
@@ -9,7 +9,9 @@
 ### Variables
 
 ### Functions
-#### `constructor(uint256 initialSupply)` (public)
+```solidity
+constructor(uint256 initialSupply)
+```
 
 
 
@@ -18,7 +20,9 @@
 **Arguments:**
 - *initialSupply* - Total supply.
 
-#### `mint(address account, uint256 amount)` (public)
+```solidity
+mint(address account, uint256 amount)
+```
 
 
 
@@ -29,7 +33,9 @@
 
 - *amount* - Amount of token to be created.
 
-#### `burn(address account, uint256 amount)` (public)
+```solidity
+burn(address account, uint256 amount)
+```
 
 
 

@@ -1,41 +1,53 @@
-## `Investment`
+## Investment
 
 
 
 
 
 ### Events
-#### `UniswapRouterChanged(address newUniswapRouter)`
+```solidity
+UniswapRouterChanged(address newUniswapRouter)
+```
 
 An event thats emitted when an uniswap router contract address changed.
 
 
 
-#### `InvestTokenAllowed(address token)`
+```solidity
+InvestTokenAllowed(address token)
+```
 
 An event thats emitted when an invest token allowed.
 
 
 
-#### `InvestTokenDenied(address token)`
+```solidity
+InvestTokenDenied(address token)
+```
 
 An event thats emitted when an invest token denied.
 
 
 
-#### `BondPriceChanged(uint256 newPrice)`
+```solidity
+BondPriceChanged(uint256 newPrice)
+```
 
 An event thats emitted when an bond price changed.
 
 
 
-#### `Invested(address investor, address token, uint256 amount, uint256 reward)`
+```solidity
+Invested(address investor, address token, uint256 amount, uint256 reward)
+```
 
 An event thats emitted when an invested token.
 
 
 
-#### `Withdrawal(address recipient, address token, uint256 amount)`
+```solidity
+Withdrawal(address recipient, address token, uint256 amount)
+```
 
 An event thats emitted when an withdrawal token.
 
@@ -43,23 +55,39 @@ An event thats emitted when an withdrawal token.
 
 
 ### Variables
-#### `contract ERC20 cumulative`
+```solidity
+contract ERC20 cumulative
+```
 
-#### `contract Bond bond`
+```solidity
+contract Bond bond
+```
 
-#### `uint256 bondTokenLockDate`
+```solidity
+uint256 bondTokenLockDate
+```
 
-#### `uint8 BOND_PRICE_DECIMALS`
+```solidity
+uint8 BOND_PRICE_DECIMALS
+```
 
-#### `uint256 bondPrice`
+```solidity
+uint256 bondPrice
+```
 
-#### `contract IUniswapV2Router02 uniswapRouter`
+```solidity
+contract IUniswapV2Router02 uniswapRouter
+```
 
-#### `mapping(address => bool) investmentTokens`
+```solidity
+mapping(address => bool) investmentTokens
+```
 
 
 ### Functions
-#### `constructor(address _cumulative, address _bond, uint256 _bondTokenLockDate, address _uniswapRouter)` (public)
+```solidity
+constructor(address _cumulative, address _bond, uint256 _bondTokenLockDate, address _uniswapRouter)
+```
 
 
 
@@ -72,7 +100,9 @@ An event thats emitted when an withdrawal token.
 
 - *_uniswapRouter* - Address of UniswapV2Router
 
-#### `changeUniswapRouter(address _uniswapRouter)` (external)
+```solidity
+changeUniswapRouter(address _uniswapRouter)
+```
 
 Changed uniswap router contract address.
 
@@ -82,7 +112,9 @@ Changed uniswap router contract address.
 **Arguments:**
 - *_uniswapRouter* - Address new uniswap router contract.
 
-#### `allowToken(address token)` (external)
+```solidity
+allowToken(address token)
+```
 
 Add token to investable tokens white list
 
@@ -92,7 +124,9 @@ Add token to investable tokens white list
 **Arguments:**
 - *token* - Allowable token
 
-#### `denyToken(address token)` (external)
+```solidity
+denyToken(address token)
+```
 
 Remove token from investable tokens white list
 
@@ -102,7 +136,9 @@ Remove token from investable tokens white list
 **Arguments:**
 - *token* - Denied token
 
-#### `changeBondPrice(uint256 newPrice)` (external)
+```solidity
+changeBondPrice(uint256 newPrice)
+```
 
 Update Bond token price
 
@@ -112,7 +148,9 @@ Update Bond token price
 **Arguments:**
 - *newPrice* - New price of Bond token of USD (6 decimal)
 
-#### `price(address token, uint256 amount) → uint256` (external)
+```solidity
+price(address token, uint256 amount) → uint256
+```
 
 
 
@@ -127,7 +165,9 @@ Update Bond token price
 **Returns:**
 - *Amount* - bond token after swap
 
-#### `invest(address token, uint256 amount) → bool` (external)
+```solidity
+invest(address token, uint256 amount) → bool
+```
 
 Invest tokens to protocol
 
@@ -139,13 +179,17 @@ Invest tokens to protocol
 
 - *amount* - Invested amount
 
-#### `investETH() → bool` (external)
+```solidity
+investETH() → bool
+```
 
 Invest ETH to protocol
 
 
 
-#### `withdraw(address recipient)` (external)
+```solidity
+withdraw(address recipient)
+```
 
 Withdraw invested token to address
 

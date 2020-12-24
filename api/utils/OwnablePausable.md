@@ -1,11 +1,13 @@
-## `OwnablePausable`
+## OwnablePausable
 
 
 
 
 
 ### Events
-#### `PauserChanged(address newPauser)`
+```solidity
+PauserChanged(address newPauser)
+```
 
 An event thats emitted when an pauser address changed.
 
@@ -13,11 +15,15 @@ An event thats emitted when an pauser address changed.
 
 
 ### Variables
-#### `address pauser`
+```solidity
+address pauser
+```
 
 
 ### Functions
-#### `changePauser(address newPauser)` (external)
+```solidity
+changePauser(address newPauser)
+```
 
 Change pauser account.
 
@@ -27,13 +33,17 @@ Change pauser account.
 **Arguments:**
 - *newPauser* - Address of new pauser account.
 
-#### `pause()` (public)
+```solidity
+pause()
+```
 
 Triggers stopped state.
 
 
 
-#### `unpause()` (public)
+```solidity
+unpause()
+```
 
 Returns to normal state.
 

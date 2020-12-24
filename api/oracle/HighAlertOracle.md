@@ -1,29 +1,37 @@
-## `HighAlertOracle`
+## HighAlertOracle
 
 
 
 
 
 ### Events
-#### `ContractAdded(address addedContract)`
+```solidity
+ContractAdded(address addedContract)
+```
 
 An event emitted when contract added to pausable list.
 
 
 
-#### `ContractRemoved(address removedContract)`
+```solidity
+ContractRemoved(address removedContract)
+```
 
 An event emitted when contract removed at pausable list.
 
 
 
-#### `PausedAll(string reason)`
+```solidity
+PausedAll(string reason)
+```
 
 An event emitted when paused all contracts.
 
 
 
-#### `UnpausedAll(string reason)`
+```solidity
+UnpausedAll(string reason)
+```
 
 An event emitted when unpaused all contracts.
 
@@ -33,7 +41,9 @@ An event emitted when unpaused all contracts.
 ### Variables
 
 ### Functions
-#### `addContract(address _contract)` (external)
+```solidity
+addContract(address _contract)
+```
 
 Add contract to pausable list.
 
@@ -43,7 +53,9 @@ Add contract to pausable list.
 **Arguments:**
 - *_contract* - Target contract.
 
-#### `removeContract(address _contract)` (external)
+```solidity
+removeContract(address _contract)
+```
 
 Remove contract at pausable list.
 
@@ -53,7 +65,9 @@ Remove contract at pausable list.
 **Arguments:**
 - *_contract* - Target contract.
 
-#### `getContracts() → address[]` (external)
+```solidity
+getContracts() → address[]
+```
 
 Return all pausable contracts.
 
@@ -63,7 +77,9 @@ Return all pausable contracts.
 **Returns:**
 - *Pausable* - contracts list.
 
-#### `pauseAll(string reason)` (external)
+```solidity
+pauseAll(string reason)
+```
 
 Pause all pausable contracts.
 
@@ -73,7 +89,9 @@ Pause all pausable contracts.
 **Arguments:**
 - *reason* - Reason of pause.
 
-#### `unpauseAll(string reason)` (external)
+```solidity
+unpauseAll(string reason)
+```
 
 Unpause all pausable contracts.
 

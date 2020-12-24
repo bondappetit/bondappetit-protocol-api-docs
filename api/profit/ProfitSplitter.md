@@ -1,53 +1,69 @@
-## `ProfitSplitter`
+## ProfitSplitter
 
 
 
 
 
 ### Events
-#### `Transfer(address recipient, uint256 amount)`
+```solidity
+Transfer(address recipient, uint256 amount)
+```
 
 An event thats emitted when an incoming token transferred to recipient.
 
 
 
-#### `BudgetChanged(address newBudget, uint256 newBalance)`
+```solidity
+BudgetChanged(address newBudget, uint256 newBalance)
+```
 
 An event thats emitted when an budget contract address and target balance changed.
 
 
 
-#### `IncomingChanged(address newIncoming)`
+```solidity
+IncomingChanged(address newIncoming)
+```
 
 An event thats emitted when an incoming token changed.
 
 
 
-#### `UniswapRouterChanged(address newUniswapRouter)`
+```solidity
+UniswapRouterChanged(address newUniswapRouter)
+```
 
 An event thats emitted when an uniswap router contract address changed.
 
 
 
-#### `RecipientAdded(address recipient, uint256 share)`
+```solidity
+RecipientAdded(address recipient, uint256 share)
+```
 
 An event thats emitted when an recipient added.
 
 
 
-#### `RecipientRemoved(address recipient)`
+```solidity
+RecipientRemoved(address recipient)
+```
 
 An event thats emitted when an recipient removed.
 
 
 
-#### `PayToBudget(address recipient, uint256 amount)`
+```solidity
+PayToBudget(address recipient, uint256 amount)
+```
 
 An event thats emitted when an profit payed to budget.
 
 
 
-#### `PayToRecipient(address recipient, uint256 amount)`
+```solidity
+PayToRecipient(address recipient, uint256 amount)
+```
 
 An event thats emitted when an profit payed to recipient.
 
@@ -55,29 +71,47 @@ An event thats emitted when an profit payed to recipient.
 
 
 ### Variables
-#### `uint256 SHARE_ACCURACY`
+```solidity
+uint256 SHARE_ACCURACY
+```
 
-#### `uint256 SHARE_DIGITS`
+```solidity
+uint256 SHARE_DIGITS
+```
 
-#### `contract ERC20 incoming`
+```solidity
+contract ERC20 incoming
+```
 
-#### `address payable budget`
+```solidity
+address payable budget
+```
 
-#### `uint256 budgetBalance`
+```solidity
+uint256 budgetBalance
+```
 
-#### `mapping(address => uint256) shares`
+```solidity
+mapping(address => uint256) shares
+```
 
-#### `contract IUniswapV2Router02 uniswapRouter`
+```solidity
+contract IUniswapV2Router02 uniswapRouter
+```
 
 
 ### Functions
-#### `receive()` (external)
+```solidity
+receive()
+```
 
 
 
 
 
-#### `constructor(address _incoming, address _uniswapRouter)` (public)
+```solidity
+constructor(address _incoming, address _uniswapRouter)
+```
 
 
 
@@ -88,7 +122,9 @@ An event thats emitted when an profit payed to recipient.
 
 - *_uniswapRouter* - Address of Uniswap router contract.
 
-#### `changeUniswapRouter(address _uniswapRouter)` (external)
+```solidity
+changeUniswapRouter(address _uniswapRouter)
+```
 
 Changed uniswap router contract address.
 
@@ -98,7 +134,9 @@ Changed uniswap router contract address.
 **Arguments:**
 - *_uniswapRouter* - Address new uniswap router contract.
 
-#### `changeBudget(address payable _budget, uint256 _budgetBalance)` (external)
+```solidity
+changeBudget(address payable _budget, uint256 _budgetBalance)
+```
 
 Changed budget contract address and target balance.
 
@@ -110,7 +148,9 @@ Changed budget contract address and target balance.
 
 - *_budgetBalance* - Target budget balance.
 
-#### `transfer(address _recipient, uint256 amount)` (public)
+```solidity
+transfer(address _recipient, uint256 amount)
+```
 
 Transfer incoming token to recipient.
 
@@ -122,7 +162,9 @@ Transfer incoming token to recipient.
 
 - *amount* - Amount of transferred token.
 
-#### `changeIncoming(address _incoming, address _recipient)` (external)
+```solidity
+changeIncoming(address _incoming, address _recipient)
+```
 
 Change incoming token address.
 
@@ -134,7 +176,9 @@ Change incoming token address.
 
 - *_recipient* - Address of recipient.
 
-#### `addRecipient(address recipient, uint256 share)` (external)
+```solidity
+addRecipient(address recipient, uint256 share)
+```
 
 Add recipient.
 
@@ -146,7 +190,9 @@ Add recipient.
 
 - *share* - Target share.
 
-#### `removeRecipient(address recipient)` (external)
+```solidity
+removeRecipient(address recipient)
+```
 
 Remove recipient.
 
@@ -156,7 +202,9 @@ Remove recipient.
 **Arguments:**
 - *recipient* - Address of recipient contract.
 
-#### `getRecipients() → address[]` (public)
+```solidity
+getRecipients() → address[]
+```
 
 Get addresses of recipients.
 
@@ -166,7 +214,9 @@ Get addresses of recipients.
 **Returns:**
 - *Current* - recipients list.
 
-#### `split(uint256 amount)` (external)
+```solidity
+split(uint256 amount)
+```
 
 Split all incoming token balance to recipients and budget contract.
 

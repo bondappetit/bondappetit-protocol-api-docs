@@ -1,11 +1,13 @@
-## `IDepositaryOracle`
+## IDepositaryOracle
 
 
 
 
 
 ### Events
-#### `Update(string isin, uint256 amount)`
+```solidity
+Update(string isin, uint256 amount)
+```
 
 
 
@@ -15,7 +17,9 @@ Emitted when the depositary update.
 ### Variables
 
 ### Functions
-#### `put(string isin, uint256 amount)` (external)
+```solidity
+put(string isin, uint256 amount)
+```
 
 Write a security amount to the storage mapping.
 
@@ -27,7 +31,9 @@ Write a security amount to the storage mapping.
 
 - *amount* - Amount of securities.
 
-#### `get(string isin) → struct IDepositaryOracle.Security` (external)
+```solidity
+get(string isin) → struct IDepositaryOracle.Security
+```
 
 Get amount securities.
 
@@ -41,7 +47,9 @@ Get amount securities.
 **Returns:**
 - *amount* - Amount of securities.
 
-#### `all() → struct IDepositaryOracle.Security[]` (external)
+```solidity
+all() → struct IDepositaryOracle.Security[]
+```
 
 Get all depositary securities.
 

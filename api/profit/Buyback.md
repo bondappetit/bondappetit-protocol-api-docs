@@ -1,35 +1,45 @@
-## `Buyback`
+## Buyback
 
 
 
 
 
 ### Events
-#### `Transfer(address recipient, uint256 amount)`
+```solidity
+Transfer(address recipient, uint256 amount)
+```
 
 An event thats emitted when an incoming token transferred to recipient.
 
 
 
-#### `RecipientChanged(address newRecipient)`
+```solidity
+RecipientChanged(address newRecipient)
+```
 
 An event thats emitted when an recipient address changed.
 
 
 
-#### `IncomingChanged(address newIncoming)`
+```solidity
+IncomingChanged(address newIncoming)
+```
 
 An event thats emitted when an incoming token changed.
 
 
 
-#### `UniswapRouterChanged(address newUniswapRouter)`
+```solidity
+UniswapRouterChanged(address newUniswapRouter)
+```
 
 An event thats emitted when an uniswap router contract address changed.
 
 
 
-#### `BuybackSuccessed(uint256 incoming, uint256 outcoming)`
+```solidity
+BuybackSuccessed(uint256 incoming, uint256 outcoming)
+```
 
 An event thats emitted when an buyback successed.
 
@@ -37,17 +47,27 @@ An event thats emitted when an buyback successed.
 
 
 ### Variables
-#### `contract ERC20 incoming`
+```solidity
+contract ERC20 incoming
+```
 
-#### `contract ERC20 outcoming`
+```solidity
+contract ERC20 outcoming
+```
 
-#### `address recipient`
+```solidity
+address recipient
+```
 
-#### `contract IUniswapV2Router02 uniswapRouter`
+```solidity
+contract IUniswapV2Router02 uniswapRouter
+```
 
 
 ### Functions
-#### `constructor(address _incoming, address _outcoming, address _recipient, address _uniswapRouter)` (public)
+```solidity
+constructor(address _incoming, address _outcoming, address _recipient, address _uniswapRouter)
+```
 
 
 
@@ -62,7 +82,9 @@ An event thats emitted when an buyback successed.
 
 - *_uniswapRouter* - Address of Uniswap router contract.
 
-#### `changeRecipient(address _recipient)` (external)
+```solidity
+changeRecipient(address _recipient)
+```
 
 Change recipient address.
 
@@ -72,7 +94,9 @@ Change recipient address.
 **Arguments:**
 - *_recipient* - New recipient address.
 
-#### `changeUniswapRouter(address _uniswapRouter)` (external)
+```solidity
+changeUniswapRouter(address _uniswapRouter)
+```
 
 Changed uniswap router contract address.
 
@@ -82,7 +106,9 @@ Changed uniswap router contract address.
 **Arguments:**
 - *_uniswapRouter* - Address new uniswap router contract.
 
-#### `transfer(address _recipient, uint256 amount)` (public)
+```solidity
+transfer(address _recipient, uint256 amount)
+```
 
 Transfer incoming token to recipient.
 
@@ -94,7 +120,9 @@ Transfer incoming token to recipient.
 
 - *amount* - Amount of transferred token.
 
-#### `changeIncoming(address _incoming, address _recipient)` (external)
+```solidity
+changeIncoming(address _incoming, address _recipient)
+```
 
 Change incoming token address.
 
@@ -106,7 +134,9 @@ Change incoming token address.
 
 - *_recipient* - Address of recipient.
 
-#### `buy(uint256 amount)` (external)
+```solidity
+buy(uint256 amount)
+```
 
 Make buyback attempt.
 

@@ -1,4 +1,4 @@
-## `SecurityOracle`
+## SecurityOracle
 
 
 
@@ -9,13 +9,17 @@
 ### Variables
 
 ### Functions
-#### `put(string isin, string prop, bytes value)` (external)
+```solidity
+put(string isin, string prop, bytes value)
+```
 
 
 
 
 
-#### `get(string isin, string prop) → bytes` (external)
+```solidity
+get(string isin, string prop) → bytes
+```
 
 
 

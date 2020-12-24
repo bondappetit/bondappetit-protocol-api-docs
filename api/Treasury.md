@@ -1,4 +1,4 @@
-## `Treasury`
+## Treasury
 
 
 
@@ -9,13 +9,17 @@
 ### Variables
 
 ### Functions
-#### `receive()` (external)
+```solidity
+receive()
+```
 
 
 
 
 
-#### `transfer(address token, address recipient, uint256 amount) → bool` (external)
+```solidity
+transfer(address token, address recipient, uint256 amount) → bool
+```
 
 Transfer target token to recipient.
 
@@ -29,7 +33,9 @@ Transfer target token to recipient.
 
 - *amount* - Transfer amount.
 
-#### `transferETH(address payable recipient, uint256 amount) → bool` (external)
+```solidity
+transferETH(address payable recipient, uint256 amount) → bool
+```
 
 Transfer ETH to recipient.
 
@@ -41,7 +47,9 @@ Transfer ETH to recipient.
 
 - *amount* - Transfer amount.
 
-#### `approve(address token, address recipient, uint256 amount) → bool` (external)
+```solidity
+approve(address token, address recipient, uint256 amount) → bool
+```
 
 Approve target token to recipient.
 

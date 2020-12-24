@@ -1,17 +1,21 @@
-## `Budget`
+## Budget
 
 
 
 
 
 ### Events
-#### `ExpenditureChanged(address recipient, uint256 min, uint256 target)`
+```solidity
+ExpenditureChanged(address recipient, uint256 min, uint256 target)
+```
 
 An event emitted when expenditure item changed.
 
 
 
-#### `Payed(address recipient, uint256 amount)`
+```solidity
+Payed(address recipient, uint256 amount)
+```
 
 An event emitted when expenditure item payed.
 
@@ -19,19 +23,27 @@ An event emitted when expenditure item payed.
 
 
 ### Variables
-#### `mapping(address => struct Budget.Expenditure) expenditures`
+```solidity
+mapping(address => struct Budget.Expenditure) expenditures
+```
 
-#### `struct EnumerableSet.AddressSet recipients`
+```solidity
+struct EnumerableSet.AddressSet recipients
+```
 
 
 ### Functions
-#### `receive()` (external)
+```solidity
+receive()
+```
 
 
 
 
 
-#### `changeExpenditure(address recipient, uint256 min, uint256 target)` (external)
+```solidity
+changeExpenditure(address recipient, uint256 min, uint256 target)
+```
 
 Change expenditure item.
 
@@ -45,7 +57,9 @@ Change expenditure item.
 
 - *target* - Target balance.
 
-#### `transferETH(address payable recipient, uint256 amount) → bool` (external)
+```solidity
+transferETH(address payable recipient, uint256 amount) → bool
+```
 
 Transfer ETH to recipient.
 
@@ -57,7 +71,9 @@ Transfer ETH to recipient.
 
 - *amount* - Transfer amount.
 
-#### `getRecipients() → address[]` (external)
+```solidity
+getRecipients() → address[]
+```
 
 Return all recipients addresses.
 
@@ -67,7 +83,9 @@ Return all recipients addresses.
 **Returns:**
 - *Recipients* - addresses.
 
-#### `deficitTo(address recipient) → uint256` (public)
+```solidity
+deficitTo(address recipient) → uint256
+```
 
 Return balance deficit of recipient.
 
@@ -81,7 +99,9 @@ Return balance deficit of recipient.
 **Returns:**
 - *Balance* - deficit of recipient.
 
-#### `deficit() → uint256` (public)
+```solidity
+deficit() → uint256
+```
 
 Return summary balance deficit of all recipients.
 
@@ -91,7 +111,9 @@ Return summary balance deficit of all recipients.
 **Returns:**
 - *Summary* - balance deficit of all recipients.
 
-#### `pay()` (external)
+```solidity
+pay()
+```
 
 Pay ETH to all recipients with balance deficit.
 
