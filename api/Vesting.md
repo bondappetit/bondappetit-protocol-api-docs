@@ -32,7 +32,7 @@ An event emitted when withdrawal a period.
 
 ### Variables
 ```solidity
-contract Bond bond
+contract ERC20 token
 ```
 
 ```solidity
@@ -62,7 +62,7 @@ The number of periods for a per recipient.
 
 
 ```solidity
-constructor(address _bond)
+constructor(address _token)
 ```
 
 
@@ -70,7 +70,7 @@ constructor(address _bond)
 
 
 **Arguments:**
-- *_bond* - Address of Bond token contract.
+- *_token* - Address of vesting token contract.
 
 ```solidity
 lock(address recipient, uint256 amount, uint256 date) → uint256

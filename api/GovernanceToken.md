@@ -1,4 +1,4 @@
-## Bond
+## GovernanceToken
 
 
 
@@ -64,7 +64,7 @@ mapping(address => uint96) balances
 ```
 
 ```solidity
-mapping(address => struct Bond.Lock) locking
+mapping(address => struct GovernanceToken.Lock) locking
 ```
 
 ```solidity
@@ -76,7 +76,7 @@ mapping(address => address) delegates
 ```
 
 ```solidity
-mapping(address => mapping(uint32 => struct Bond.Checkpoint)) checkpoints
+mapping(address => mapping(uint32 => struct GovernanceToken.Checkpoint)) checkpoints
 ```
 
 ```solidity
@@ -101,7 +101,7 @@ mapping(address => uint256) nonces
 constructor(address account)
 ```
 
-Construct a new Bond token
+Construct a new token
 
 
 

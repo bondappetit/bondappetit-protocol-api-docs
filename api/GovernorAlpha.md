@@ -56,7 +56,7 @@ contract TimelockInterface timelock
 ```
 
 ```solidity
-contract BondInterface bond
+contract GovernanceTokenInterface governanceToken
 ```
 
 ```solidity
@@ -126,7 +126,7 @@ The duration of voting on a proposal, in blocks
 
 
 ```solidity
-constructor(address timelock_, address bond_, address guardian_)
+constructor(address _timelock, address _governanceToken, address _guardian)
 ```
 
 

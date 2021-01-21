@@ -46,10 +46,10 @@ An event thats emitted when an token denied.
 
 
 ```solidity
-BondPriceChanged(uint256 newPrice)
+GovernanceTokenPriceChanged(uint256 newPrice)
 ```
 
-An event thats emitted when an bond token price changed.
+An event thats emitted when an governance token price changed.
 
 
 
@@ -80,15 +80,15 @@ contract ERC20 cumulative
 ```
 
 ```solidity
-contract ABT abt
+contract ERC20 stableToken
 ```
 
 ```solidity
-contract Bond bond
+contract ERC20 governanceToken
 ```
 
 ```solidity
-uint256 bondPrice
+uint256 governanceTokenPrice
 ```
 
 ```solidity
@@ -106,7 +106,7 @@ mapping(address => string) allowedTokens
 
 ### Functions
 ```solidity
-constructor(address _cumulative, address _abt, address _bond, address _uniswapRouter, address _priceOracle)
+constructor(address _cumulative, address _stableToken, address _governanceToken, address _uniswapRouter, address _priceOracle)
 ```
 
 
@@ -116,9 +116,9 @@ constructor(address _cumulative, address _abt, address _bond, address _uniswapRo
 **Arguments:**
 - *_cumulative* - Address of cumulative token.
 
-- *_abt* - Address of ABT token.
+- *_stableToken* - Address of stable token.
 
-- *_bond* - Address of Bond token.
+- *_governanceToken* - Address of governance token.
 
 - *_uniswapRouter* - Address of Uniswap router contract.
 
@@ -174,6 +174,8 @@ Add token to tokens white list.
 **Arguments:**
 - *token* - Allowable token.
 
+- *symbol* - Symbol target token of price oracle contract.
+
 ```solidity
 denyToken(address token)
 ```
@@ -202,36 +204,22 @@ isAllowedToken(address token) → bool
 - *Is* - target token allowed.
 
 ```solidity
-changeBondPrice(uint256 newPrice)
+changeGovernanceTokenPrice(uint256 newPrice)
 ```
 
-Update Bond token price
+Update price of governance token.
 
 
 
 
 **Arguments:**
-- *newPrice* - New price of Bond token of USD (6 decimal)
+- *newPrice* - New price of governance token of USD (6 decimal).
 
 ```solidity
-transferABT(address recipient, uint256 amount)
+transferStableToken(address recipient, uint256 amount)
 ```
 
-Transfer ABT token to recipient.
-
-
-
-
-**Arguments:**
-- *recipient* - Address of recipient.
-
-- *amount* - Amount of transfered token.
-
-```solidity
-transferBond(address recipient, uint256 amount)
-```
-
-Transfer Bond token to recipient.
+Transfer stable token to recipient.
 
 
 
@@ -242,12 +230,26 @@ Transfer Bond token to recipient.
 - *amount* - Amount of transfered token.
 
 ```solidity
-priceABT(address token, uint256 amount) → uint256
+transferGovernanceToken(address recipient, uint256 amount)
+```
+
+Transfer governance token to recipient.
+
+
+
+
+**Arguments:**
+- *recipient* - Address of recipient.
+
+- *amount* - Amount of transfered token.
+
+```solidity
+priceStableToken(address token, uint256 amount) → uint256
 ```
 
 
 
-Get ABT token price from payment token amount.
+Get stable token price from payment token amount.
 
 
 **Arguments:**
@@ -260,12 +262,12 @@ Get ABT token price from payment token amount.
 - *Price* - of product token.
 
 ```solidity
-priceBond(address token, uint256 amount) → uint256
+priceGovernanceToken(address token, uint256 amount) → uint256
 ```
 
 
 
-Get Bond token price from payment token amount.
+Get governance token price from payment token amount.
 
 
 **Arguments:**
@@ -278,10 +280,10 @@ Get Bond token price from payment token amount.
 - *Price* - of product token.
 
 ```solidity
-buyABT(address token, uint256 amount) → bool
+buyStableToken(address token, uint256 amount) → bool
 ```
 
-Buy ABT token with ERC20 payment token amount.
+Buy stable token with ERC20 payment token amount.
 
 
 
@@ -296,10 +298,10 @@ Buy ABT token with ERC20 payment token amount.
 - *True* - if success.
 
 ```solidity
-buyBond(address token, uint256 amount) → bool
+buyGovernanceToken(address token, uint256 amount) → bool
 ```
 
-Buy Bond token with ERC20 payment token amount.
+Buy governance token with ERC20 payment token amount.
 
 
 
@@ -314,10 +316,10 @@ Buy Bond token with ERC20 payment token amount.
 - *True* - if success.
 
 ```solidity
-buyABTFromETH() → bool
+buyStableTokenFromETH() → bool
 ```
 
-Buy ABT token with ETH amount.
+Buy stable token with ETH amount.
 
 
 
@@ -326,10 +328,10 @@ Buy ABT token with ETH amount.
 - *True* - if success.
 
 ```solidity
-buyBondFromETH() → bool
+buyGovernanceTokenFromETH() → bool
 ```
 
-Buy Bond token with ETH amount.
+Buy governance token with ETH amount.
 
 
 

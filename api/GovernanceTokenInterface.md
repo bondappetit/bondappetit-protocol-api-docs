@@ -1,4 +1,4 @@
-## BondInterface
+## GovernanceTokenInterface
 
 
 
