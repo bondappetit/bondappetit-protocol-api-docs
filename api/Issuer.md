@@ -17,14 +17,14 @@ An event thats emitted when an Treasury contract transfered.
 Rebalance()
 ```
 
-An event thats emitted when an ABT total supply rebalanced.
+An event thats emitted when an stable token total supply rebalanced.
 
 
 
 
 ### Variables
 ```solidity
-contract ABT abt
+contract StableToken stableToken
 ```
 
 ```solidity
@@ -34,7 +34,7 @@ address treasury
 
 ### Functions
 ```solidity
-constructor(address _abt, address _treasury)
+constructor(address _stableToken, address _treasury)
 ```
 
 
@@ -42,7 +42,7 @@ constructor(address _abt, address _treasury)
 
 
 **Arguments:**
-- *_abt* - ABT contract address.
+- *_stableToken* - Stable token contract address.
 
 - *_treasury* - Treasury contract address.
 
@@ -62,7 +62,7 @@ Transfer Treasury contract to new address.
 rebalance()
 ```
 
-Rebalance ABT total supply by depositary balance. Mint ABT tokens if depositary balance greater token total supply and burn otherwise.
+Rebalance stable token total supply by depositary balance. Mint stable token if depositary balance greater token total supply and burn otherwise.
 
 
 

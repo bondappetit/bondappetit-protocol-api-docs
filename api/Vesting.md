@@ -6,6 +6,14 @@
 
 ### Events
 ```solidity
+DelegateVotes(address delegatee)
+```
+
+An event emitted when all votes delegate to.
+
+
+
+```solidity
 Locked(uint256 periodId)
 ```
 
@@ -32,7 +40,7 @@ An event emitted when withdrawal a period.
 
 ### Variables
 ```solidity
-contract Bond bond
+contract ERC20 token
 ```
 
 ```solidity
@@ -62,7 +70,7 @@ The number of periods for a per recipient.
 
 
 ```solidity
-constructor(address _bond)
+constructor(address _token)
 ```
 
 
@@ -70,10 +78,22 @@ constructor(address _bond)
 
 
 **Arguments:**
-- *_bond* - Address of Bond token contract.
+- *_token* - Address of vesting token contract.
 
 ```solidity
-lock(address recipient, uint256 amount, uint256 date) → uint256
+delegate(address governanceToken, address delegatee)
+```
+
+Delegate votes to delegatee.
+
+
+
+
+**Arguments:**
+- *delegatee* - The address to delegate votes to
+
+```solidity
+lock(address recipient, uint256 amount, string description, uint256 date) → uint256
 ```
 
 Add new period.

@@ -90,6 +90,17 @@ Removed depositary address from agregate.
 - *depositary* - Removed depositary address.
 
 ```solidity
+allowedDepositaries() → address[]
+```
+
+
+
+
+
+**Returns:**
+- *Allowed* - depositaries list.
+
+```solidity
 balance() → uint256
 ```
 

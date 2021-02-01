@@ -30,10 +30,10 @@ An event thats emitted when an invest token denied.
 
 
 ```solidity
-BondPriceChanged(uint256 newPrice)
+GovernanceTokenPriceChanged(uint256 newPrice)
 ```
 
-An event thats emitted when an bond price changed.
+An event thats emitted when an governance token price changed.
 
 
 
@@ -60,19 +60,19 @@ contract ERC20 cumulative
 ```
 
 ```solidity
-contract Bond bond
+contract GovernanceToken governanceToken
 ```
 
 ```solidity
-uint256 bondTokenLockDate
+uint256 governanceTokenLockDate
 ```
 
 ```solidity
-uint8 BOND_PRICE_DECIMALS
+uint8 GOVERNANCE_TOKEN_PRICE_DECIMALS
 ```
 
 ```solidity
-uint256 bondPrice
+uint256 governanceTokenPrice
 ```
 
 ```solidity
@@ -86,7 +86,7 @@ mapping(address => bool) investmentTokens
 
 ### Functions
 ```solidity
-constructor(address _cumulative, address _bond, uint256 _bondTokenLockDate, address _uniswapRouter)
+constructor(address _cumulative, address _governanceToken, uint256 _governanceTokenLockDate, address _uniswapRouter)
 ```
 
 
@@ -96,7 +96,7 @@ constructor(address _cumulative, address _bond, uint256 _bondTokenLockDate, addr
 **Arguments:**
 - *_cumulative* - Address of cumulative token
 
-- *_bond* - Address of Bond token
+- *_governanceToken* - Address of governance token
 
 - *_uniswapRouter* - Address of UniswapV2Router
 
@@ -137,16 +137,16 @@ Remove token from investable tokens white list
 - *token* - Denied token
 
 ```solidity
-changeBondPrice(uint256 newPrice)
+changeGovernanceTokenPrice(uint256 newPrice)
 ```
 
-Update Bond token price
+Update governance token price
 
 
 
 
 **Arguments:**
-- *newPrice* - New price of Bond token of USD (6 decimal)
+- *newPrice* - New price of governance token of USD (6 decimal)
 
 ```solidity
 price(address token, uint256 amount) → uint256
@@ -163,7 +163,7 @@ price(address token, uint256 amount) → uint256
 
 
 **Returns:**
-- *Amount* - bond token after swap
+- *Amount* - governance token after swap
 
 ```solidity
 invest(address token, uint256 amount) → bool
