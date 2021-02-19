@@ -59,6 +59,18 @@ Transfer Treasury contract to new address.
 - *_treasury* - New address Treasury contract.
 
 ```solidity
+changeStableTokenOwner(address _owner)
+```
+
+Change owner of Stable token contract.
+
+
+
+
+**Arguments:**
+- *_owner* - New owner address.
+
+```solidity
 rebalance()
 ```
 

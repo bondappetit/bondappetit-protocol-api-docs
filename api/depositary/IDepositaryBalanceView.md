@@ -4,10 +4,6 @@
 
 
 
-### Events
-
-### Variables
-
 ### Functions
 ```solidity
 decimals() → uint256

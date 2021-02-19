@@ -4,10 +4,6 @@
 
 
 
-### Events
-
-### Variables
-
 ### Functions
 ```solidity
 constructor(string name, string symbol, uint256 initialSupply)

@@ -14,8 +14,6 @@ PairCreated(address token0, address token1, address pair, uint256)
 
 
 
-### Variables
-
 ### Functions
 ```solidity
 feeTo() → address

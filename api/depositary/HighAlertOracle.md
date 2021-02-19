@@ -38,8 +38,6 @@ An event emitted when unpaused all contracts.
 
 
 
-### Variables
-
 ### Functions
 ```solidity
 addContract(address _contract)

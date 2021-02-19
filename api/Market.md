@@ -46,15 +46,7 @@ An event thats emitted when an token denied.
 
 
 ```solidity
-GovernanceTokenPriceChanged(uint256 newPrice)
-```
-
-An event thats emitted when an governance token price changed.
-
-
-
-```solidity
-Buy(address customer, address product, address token, uint256 amount, uint256 buy)
+Buy(address customer, address token, uint256 amount, uint256 buy)
 ```
 
 An event thats emitted when an account buyed token.
@@ -76,19 +68,19 @@ uint256 PRICE_DECIMALS
 ```
 
 ```solidity
+uint256 REWARD_DECIMALS
+```
+
+```solidity
 contract ERC20 cumulative
 ```
 
 ```solidity
-contract ERC20 stableToken
+contract ERC20 productToken
 ```
 
 ```solidity
-contract ERC20 governanceToken
-```
-
-```solidity
-uint256 governanceTokenPrice
+contract ERC20 rewardToken
 ```
 
 ```solidity
@@ -106,7 +98,7 @@ mapping(address => string) allowedTokens
 
 ### Functions
 ```solidity
-constructor(address _cumulative, address _stableToken, address _governanceToken, address _uniswapRouter, address _priceOracle)
+constructor(address _cumulative, address _productToken, address _rewardToken, address _uniswapRouter, address _priceOracle)
 ```
 
 
@@ -116,9 +108,9 @@ constructor(address _cumulative, address _stableToken, address _governanceToken,
 **Arguments:**
 - *_cumulative* - Address of cumulative token.
 
-- *_stableToken* - Address of stable token.
+- *_productToken* - Address of product token.
 
-- *_governanceToken* - Address of governance token.
+- *_rewardToken* - Address of reward token.
 
 - *_uniswapRouter* - Address of Uniswap router contract.
 
@@ -204,22 +196,10 @@ isAllowedToken(address token) → bool
 - *Is* - target token allowed.
 
 ```solidity
-changeGovernanceTokenPrice(uint256 newPrice)
+transferProductToken(address recipient, uint256 amount)
 ```
 
-Update price of governance token.
-
-
-
-
-**Arguments:**
-- *newPrice* - New price of governance token of USD (6 decimal).
-
-```solidity
-transferStableToken(address recipient, uint256 amount)
-```
-
-Transfer stable token to recipient.
+Transfer product token to recipient.
 
 
 
@@ -230,10 +210,10 @@ Transfer stable token to recipient.
 - *amount* - Amount of transfered token.
 
 ```solidity
-transferGovernanceToken(address recipient, uint256 amount)
+transferRewardToken(address recipient, uint256 amount)
 ```
 
-Transfer governance token to recipient.
+Transfer reward token to recipient.
 
 
 
@@ -244,94 +224,48 @@ Transfer governance token to recipient.
 - *amount* - Amount of transfered token.
 
 ```solidity
-priceStableToken(address token, uint256 amount) → uint256
+price(address currency, uint256 payment) → uint256 product, uint256 reward
 ```
 
+Get token price.
 
 
-Get stable token price from payment token amount.
 
 
 **Arguments:**
-- *token* - Payment token.
+- *currency* - Currency token.
 
-- *amount* - Payment token amount.
+- *payment* - Amount of payment.
 
 
 **Returns:**
-- *Price* - of product token.
+- *product* - Amount of product token.
+
+- *reward* - Amount of reward token.
 
 ```solidity
-priceGovernanceToken(address token, uint256 amount) → uint256
+buy(address currency, uint256 payment) → bool
 ```
 
-
-
-Get governance token price from payment token amount.
-
-
-**Arguments:**
-- *token* - Payment token.
-
-- *amount* - Payment token amount.
-
-
-**Returns:**
-- *Price* - of product token.
-
-```solidity
-buyStableToken(address token, uint256 amount) → bool
-```
-
-Buy stable token with ERC20 payment token amount.
+Buy token with ERC20.
 
 
 
 
 **Arguments:**
-- *token* - Payment token.
+- *currency* - Currency token.
 
-- *amount* - Amount of payment token.
+- *payment* - Amount of payment.
 
 
 **Returns:**
 - *True* - if success.
 
 ```solidity
-buyGovernanceToken(address token, uint256 amount) → bool
+buyFromETH() → bool
 ```
 
-Buy governance token with ERC20 payment token amount.
-
-
-
-
-**Arguments:**
-- *token* - Payment token.
-
-- *amount* - Amount of payment token.
-
-
-**Returns:**
-- *True* - if success.
-
-```solidity
-buyStableTokenFromETH() → bool
-```
-
-Buy stable token with ETH amount.
-
-
-
-
-**Returns:**
-- *True* - if success.
-
-```solidity
-buyGovernanceTokenFromETH() → bool
-```
-
-Buy governance token with ETH amount.
+Buy token with ETH.
 
 
 

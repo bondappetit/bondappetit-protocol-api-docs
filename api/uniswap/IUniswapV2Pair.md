@@ -54,8 +54,6 @@ Sync(uint112 reserve0, uint112 reserve1)
 
 
 
-### Variables
-
 ### Functions
 ```solidity
 name() → string

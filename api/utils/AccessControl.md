@@ -22,8 +22,6 @@ An event emitted when address denied.
 
 
 
-### Variables
-
 ### Functions
 ```solidity
 allowAccess(address member)
