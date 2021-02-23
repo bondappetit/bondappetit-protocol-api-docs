@@ -90,6 +90,21 @@ Removed depositary address from agregate.
 - *depositary* - Removed depositary address.
 
 ```solidity
+hasDepositary(address depositary) → bool
+```
+
+
+
+
+
+**Arguments:**
+- *depositary* - Target depositary address.
+
+
+**Returns:**
+- *True* - if target depositary is allowed.
+
+```solidity
 allowedDepositaries() → address[]
 ```
 

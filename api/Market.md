@@ -46,7 +46,7 @@ An event thats emitted when an token denied.
 
 
 ```solidity
-Buy(address customer, address token, uint256 amount, uint256 buy)
+Buy(address customer, address token, uint256 amount, uint256 buy, uint256 reward)
 ```
 
 An event thats emitted when an account buyed token.
