@@ -39,6 +39,10 @@ struct RealAssetDepositaryBalanceView.Asset[] portfolio
 mapping(string => uint256) portfolioIndex
 ```
 
+```solidity
+uint256 lastUpdateBlockNumber
+```
+
 
 ### Functions
 ```solidity
