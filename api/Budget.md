@@ -31,6 +31,14 @@ mapping(address => struct Budget.Expenditure) expenditures
 struct EnumerableSet.AddressSet recipients
 ```
 
+```solidity
+mapping(address => uint256) balances
+```
+
+```solidity
+uint256 totalSupply
+```
+
 
 ### Functions
 ```solidity
@@ -58,7 +66,15 @@ Change expenditure item.
 - *target* - Target balance.
 
 ```solidity
-transferETH(address payable recipient, uint256 amount) → bool
+balanceOf(address recipient) → uint256
+```
+
+Get withdrawal balance of recipient.
+
+
+
+```solidity
+transferETH(address payable recipient, uint256 amount)
 ```
 
 Transfer ETH to recipient.
@@ -116,6 +132,14 @@ pay()
 ```
 
 Pay ETH to all recipients with balance deficit.
+
+
+
+```solidity
+withdraw()
+```
+
+Withdraw ETH to recipient.
 
 
 

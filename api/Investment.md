@@ -38,6 +38,14 @@ An event thats emitted when an governance token price changed.
 
 
 ```solidity
+GovernanceTokenLockDateChanged(uint256 newLockDate)
+```
+
+An event thats emitted when an governance token lock date changed.
+
+
+
+```solidity
 Invested(address investor, address token, uint256 amount, uint256 reward)
 ```
 
@@ -79,14 +87,10 @@ uint256 governanceTokenPrice
 contract IUniswapV2Router02 uniswapRouter
 ```
 
-```solidity
-mapping(address => bool) investmentTokens
-```
-
 
 ### Functions
 ```solidity
-constructor(address _cumulative, address _governanceToken, uint256 _governanceTokenLockDate, address _uniswapRouter)
+constructor(address _cumulative, address _governanceToken, uint256 _governanceTokenLockDate, uint256 _governanceTokenPrice, address _uniswapRouter)
 ```
 
 
@@ -97,6 +101,10 @@ constructor(address _cumulative, address _governanceToken, uint256 _governanceTo
 - *_cumulative* - Address of cumulative token
 
 - *_governanceToken* - Address of governance token
+
+- *_governanceTokenLockDate* - Lock date of governance token
+
+- *_governanceTokenPrice* - Governance token price
 
 - *_uniswapRouter* - Address of UniswapV2Router
 
@@ -137,6 +145,17 @@ Remove token from investable tokens white list
 - *token* - Denied token
 
 ```solidity
+allowedTokens() → address[]
+```
+
+
+
+
+
+**Returns:**
+- *Allowed* - tokens list.
+
+```solidity
 changeGovernanceTokenPrice(uint256 newPrice)
 ```
 
@@ -147,6 +166,18 @@ Update governance token price
 
 **Arguments:**
 - *newPrice* - New price of governance token of USD (6 decimal)
+
+```solidity
+changeGovernanceTokenLockDate(uint256 _governanceTokenLockDate)
+```
+
+Update governance token lock date.
+
+
+
+
+**Arguments:**
+- *_governanceTokenLockDate* - New lock date of governance token.
 
 ```solidity
 price(address token, uint256 amount) → uint256

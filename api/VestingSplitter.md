@@ -6,6 +6,14 @@
 
 ### Events
 ```solidity
+VestingChanged(address newVesting)
+```
+
+An event emitted when vesting contract address changed.
+
+
+
+```solidity
 SharesChanged()
 ```
 
@@ -40,6 +48,10 @@ An event emitted when withdrawal a token.
 
 ### Variables
 ```solidity
+address vesting
+```
+
+```solidity
 mapping(address => uint256) totalSupply
 ```
 
@@ -48,7 +60,7 @@ mapping(address => mapping(address => uint256)) _balances
 ```
 
 ```solidity
-address[] _accounts
+struct EnumerableSet.AddressSet _accounts
 ```
 
 ```solidity
@@ -57,6 +69,17 @@ mapping(address => uint256) _share
 
 
 ### Functions
+```solidity
+constructor(address _vesting)
+```
+
+
+
+
+
+**Arguments:**
+- *_vesting* - Vesting contract address.
+
 ```solidity
 getMaxAccounts() → uint256
 ```
@@ -116,6 +139,18 @@ Get share of account in split.
 - *Share* - in split.
 
 ```solidity
+changeVesting(address _vesting)
+```
+
+Change vesting contract address.
+
+
+
+
+**Arguments:**
+- *_vesting* - New vesting contract address.
+
+```solidity
 changeShares(address[] accounts, uint256[] shares)
 ```
 
@@ -130,7 +165,7 @@ Change shares of accounts in split.
 - *shares* - Shares in split.
 
 ```solidity
-vestingWithdraw(contract Vesting vesting, uint256 periodId)
+vestingWithdraw(uint256 periodId)
 ```
 
 Withdraw reward from vesting contract.
@@ -139,8 +174,6 @@ Withdraw reward from vesting contract.
 
 
 **Arguments:**
-- *vesting* - Address of vesting contract.
-
 - *periodId* - Target vesting period.
 
 ```solidity
