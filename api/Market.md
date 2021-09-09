@@ -6,14 +6,6 @@
 
 ### Events
 ```solidity
-PriceOracleChanged(address newPriceOracle)
-```
-
-An event thats emitted when an price oracle contract address changed.
-
-
-
-```solidity
 UniswapRouterChanged(address newUniswapRouter)
 ```
 
@@ -22,7 +14,7 @@ An event thats emitted when an uniswap router contract address changed.
 
 
 ```solidity
-CumulativeChanged(address newToken)
+CumulativeChanged(address newToken, address[] priceFeed)
 ```
 
 An event thats emitted when an cumulative token changed.
@@ -30,7 +22,7 @@ An event thats emitted when an cumulative token changed.
 
 
 ```solidity
-TokenAllowed(address token, string symbol)
+TokenAllowed(address token, address[] priceFeed)
 ```
 
 An event thats emitted when an token allowed.
@@ -64,7 +56,7 @@ An event thats emitted when an cumulative token withdrawal.
 
 ### Variables
 ```solidity
-uint256 PRICE_DECIMALS
+uint8 PRICE_DECIMALS
 ```
 
 ```solidity
@@ -73,6 +65,10 @@ uint256 REWARD_DECIMALS
 
 ```solidity
 contract ERC20 cumulative
+```
+
+```solidity
+address[] cumulativePriceFeed
 ```
 
 ```solidity
@@ -88,17 +84,13 @@ contract IUniswapV2Router02 uniswapRouter
 ```
 
 ```solidity
-contract IUniswapAnchoredView priceOracle
-```
-
-```solidity
-mapping(address => string) allowedTokens
+mapping(address => address[]) allowedTokens
 ```
 
 
 ### Functions
 ```solidity
-constructor(address _cumulative, address _productToken, address _rewardToken, address _uniswapRouter, address _priceOracle)
+constructor(address _cumulative, address _productToken, address _rewardToken, address _uniswapRouter, address[] _cumulativePriceFeed)
 ```
 
 
@@ -114,7 +106,7 @@ constructor(address _cumulative, address _productToken, address _rewardToken, ad
 
 - *_uniswapRouter* - Address of Uniswap router contract.
 
-- *_priceOracle* - Address of Price oracle contract.
+- *_cumulativePriceFeed* - Price feeds chain of cumulative token.
 
 ```solidity
 changeUniswapRouter(address _uniswapRouter)
@@ -129,19 +121,7 @@ Changed uniswap router contract address.
 - *_uniswapRouter* - Address new uniswap router contract.
 
 ```solidity
-changePriceOracle(address _priceOracle)
-```
-
-Changed price oracle contract address.
-
-
-
-
-**Arguments:**
-- *_priceOracle* - Address new price oracle contract.
-
-```solidity
-changeCumulativeToken(address newToken, address recipient)
+changeCumulativeToken(address newToken, address[] newCumulativePriceFeed, address recipient)
 ```
 
 Changed cumulative token address.
@@ -152,10 +132,12 @@ Changed cumulative token address.
 **Arguments:**
 - *newToken* - Address new cumulative token.
 
+- *newCumulativePriceFeed* - Address new price oracle contract.
+
 - *recipient* - Address of recipient for withdraw current cumulative balance.
 
 ```solidity
-allowToken(address token, string symbol)
+allowToken(address token, address[] priceFeed)
 ```
 
 Add token to tokens white list.
@@ -166,7 +148,7 @@ Add token to tokens white list.
 **Arguments:**
 - *token* - Allowable token.
 
-- *symbol* - Symbol target token of price oracle contract.
+- *priceFeed* - Price feed chain.
 
 ```solidity
 denyToken(address token)
@@ -222,6 +204,21 @@ Transfer reward token to recipient.
 - *recipient* - Address of recipient.
 
 - *amount* - Amount of transfered token.
+
+```solidity
+_priceUSD(address token) → uint256
+```
+
+
+
+
+
+**Arguments:**
+- *token* - Target token.
+
+
+**Returns:**
+- *Price* - token at USD.
 
 ```solidity
 price(address currency, uint256 payment) → uint256 product, uint256 reward

@@ -14,14 +14,6 @@ An event thats emitted when an curve registry address changed.
 
 
 ```solidity
-MinterChanged(address minter)
-```
-
-An event thats emitted when an curve minter address changed.
-
-
-
-```solidity
 UniswapRouterChanged(address uniswapRouter)
 ```
 
@@ -38,25 +30,29 @@ An event thats emitted when an invested token.
 
 
 ```solidity
-Withdrawal(address token, uint256 amount, uint256 profit, address investRecipient, address profitRecipient)
+Withdrawal(address token, uint256 amount, address recipient)
 ```
 
 An event thats emitted when an withdrawal token.
 
 
 
+```solidity
+Mint(address token, uint256 amount, address recipient)
+```
+
+An event thats emitted when an withdrawal proft token.
+
+
+
 
 ### Variables
 ```solidity
-address registry
+contract IRegistry registry
 ```
 
 ```solidity
-address minter
-```
-
-```solidity
-address uniswapRouter
+contract IUniswapV2Router02 uniswapRouter
 ```
 
 ```solidity
@@ -70,7 +66,7 @@ mapping(address => uint256) balances
 
 ### Functions
 ```solidity
-constructor(address _registry, address _minter, address _uniswapRouter)
+constructor(address _registry, address _uniswapRouter)
 ```
 
 
@@ -79,8 +75,6 @@ constructor(address _registry, address _minter, address _uniswapRouter)
 
 **Arguments:**
 - *_registry* - Curve registry contract address.
-
-- *_minter* - Curve minter contract address.
 
 - *_uniswapRouter* - Uniswap router contract address.
 
@@ -94,17 +88,6 @@ changeRegistry(address _registry)
 
 **Arguments:**
 - *_registry* - New Curve registry contract address.
-
-```solidity
-changeMinter(address _minter)
-```
-
-
-
-
-
-**Arguments:**
-- *_minter* - New Curve minter contract address.
 
 ```solidity
 changeUniswap(address _uniswapRouter)
@@ -133,7 +116,7 @@ balanceOf(address pool) → uint256
 - *Balance* - of invested pool.
 
 ```solidity
-mintCrv(address pool, address toToken, address recipient)
+mint(address pool, address toToken, address recipient)
 ```
 
 Mint CRV tokens and swap to target token.
@@ -165,7 +148,7 @@ Invest token to Curve.
 - *amount* - Amount of invested token.
 
 ```solidity
-withdraw(address pool, uint256 tokenIndex, address investRecipient, address profitRecipient)
+withdraw(address pool, uint256 tokenIndex, address recipient)
 ```
 
 Withdraw invested token and reward.
@@ -178,9 +161,7 @@ Withdraw invested token and reward.
 
 - *tokenIndex* - Invested token index in the pool.
 
-- *investRecipient* - Recipient of invested token.
-
-- *profitRecipient* - Recipient of reward token.
+- *recipient* - Recipient of invested token.
 
 ```solidity
 investedPools() → address[]
